@@ -1,0 +1,11 @@
+# Renderer Directory
+
+This directory will contain the rendering engine code that combines JSON data with LaTeX templates to generate PDF resumes.
+
+## Future Contents
+
+Rendering engine implementation will be added here:
+- Template processing logic
+- JSON data parsing
+- LaTeX compilation interface
+- CLI tools for resume generation

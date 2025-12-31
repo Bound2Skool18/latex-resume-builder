@@ -1,0 +1,13 @@
+# Templates Directory
+
+This directory will contain LaTeX template files for different resume styles.
+
+## Future Contents
+
+LaTeX templates will be added here that consume the `resumeSchema.json` data structure to generate professional resumes.
+
+Examples of future templates:
+- `classic.tex` - Traditional resume format
+- `modern.tex` - Contemporary design
+- `academic.tex` - Academic CV format
+- `technical.tex` - Technical/engineering focus
