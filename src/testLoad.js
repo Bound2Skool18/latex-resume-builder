@@ -1,7 +1,7 @@
 const resume = require("./resume")
 
 resume.header.name = "Jane Doe";
-resume.skills.push("Javascript");
+resume.skills.push("JavaScript");
 
 console.log("Resume sections: ", Object.keys(resume));
 console.log("Name:", resume.header.name);
