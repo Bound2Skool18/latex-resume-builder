@@ -1,0 +1,278 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resume Schema",
+  "description": "Structured schema for resume data - the single source of truth for LaTeX resume generation",
+  "type": "object",
+  "required": ["header", "education", "experience", "skills"],
+  "properties": {
+    "header": {
+      "type": "object",
+      "description": "Personal information and contact details",
+      "required": ["name", "email"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name",
+          "example": "John Doe"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email address",
+          "example": "john.doe@example.com"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number",
+          "example": "+1-234-567-8900"
+        },
+        "location": {
+          "type": "string",
+          "description": "City and state/country",
+          "example": "San Francisco, CA"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Personal website or portfolio URL",
+          "example": "https://johndoe.com"
+        },
+        "linkedin": {
+          "type": "string",
+          "description": "LinkedIn profile URL or username",
+          "example": "https://linkedin.com/in/johndoe"
+        },
+        "github": {
+          "type": "string",
+          "description": "GitHub profile URL or username",
+          "example": "https://github.com/johndoe"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Brief professional summary or objective",
+          "example": "Software engineer with 5+ years of experience..."
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "description": "Educational background",
+      "items": {
+        "type": "object",
+        "required": ["institution", "degree", "startDate", "endDate"],
+        "properties": {
+          "institution": {
+            "type": "string",
+            "description": "Name of the educational institution",
+            "example": "University of California, Berkeley"
+          },
+          "degree": {
+            "type": "string",
+            "description": "Degree or certification obtained",
+            "example": "Bachelor of Science in Computer Science"
+          },
+          "location": {
+            "type": "string",
+            "description": "City and state/country of institution",
+            "example": "Berkeley, CA"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "Start date (YYYY-MM or YYYY)",
+            "example": "2015-09"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "End date (YYYY-MM, YYYY, or 'Present')",
+            "example": "2019-05"
+          },
+          "gpa": {
+            "type": "string",
+            "description": "Grade point average",
+            "example": "3.8/4.0"
+          },
+          "honors": {
+            "type": "array",
+            "description": "Honors, awards, or distinctions",
+            "items": {
+              "type": "string"
+            },
+            "example": ["Dean's List", "Cum Laude"]
+          },
+          "relevantCoursework": {
+            "type": "array",
+            "description": "Relevant courses taken",
+            "items": {
+              "type": "string"
+            },
+            "example": ["Data Structures", "Algorithms", "Machine Learning"]
+          }
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "description": "Professional work experience",
+      "items": {
+        "type": "object",
+        "required": ["company", "position", "startDate", "endDate"],
+        "properties": {
+          "company": {
+            "type": "string",
+            "description": "Company or organization name",
+            "example": "Tech Corp"
+          },
+          "position": {
+            "type": "string",
+            "description": "Job title or role",
+            "example": "Software Engineer"
+          },
+          "location": {
+            "type": "string",
+            "description": "City and state/country",
+            "example": "San Francisco, CA"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "Start date (YYYY-MM or YYYY)",
+            "example": "2019-06"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "End date (YYYY-MM, YYYY, or 'Present')",
+            "example": "Present"
+          },
+          "responsibilities": {
+            "type": "array",
+            "description": "Key responsibilities and achievements",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Developed and maintained microservices using Node.js and Python",
+              "Improved system performance by 40% through optimization",
+              "Led team of 3 engineers on critical projects"
+            ]
+          },
+          "technologies": {
+            "type": "array",
+            "description": "Technologies and tools used in this role",
+            "items": {
+              "type": "string"
+            },
+            "example": ["JavaScript", "Python", "Docker", "AWS"]
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "description": "Personal or professional projects",
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Project name",
+            "example": "Open Source Contribution Tool"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief description of the project",
+            "example": "A CLI tool to help developers find and contribute to open source projects"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Project URL (GitHub, demo site, etc.)",
+            "example": "https://github.com/johndoe/project"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "Start date (YYYY-MM or YYYY)",
+            "example": "2020-01"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "End date (YYYY-MM, YYYY, or 'Present')",
+            "example": "2020-06"
+          },
+          "highlights": {
+            "type": "array",
+            "description": "Key achievements or features",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Gained 500+ stars on GitHub",
+              "Used by 50+ organizations"
+            ]
+          },
+          "technologies": {
+            "type": "array",
+            "description": "Technologies used in the project",
+            "items": {
+              "type": "string"
+            },
+            "example": ["React", "Node.js", "MongoDB"]
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "description": "Technical and professional skills",
+      "properties": {
+        "languages": {
+          "type": "array",
+          "description": "Programming languages",
+          "items": {
+            "type": "string"
+          },
+          "example": ["JavaScript", "Python", "Java", "Go"]
+        },
+        "frameworks": {
+          "type": "array",
+          "description": "Frameworks and libraries",
+          "items": {
+            "type": "string"
+          },
+          "example": ["React", "Django", "Spring Boot", "Express.js"]
+        },
+        "tools": {
+          "type": "array",
+          "description": "Development tools and platforms",
+          "items": {
+            "type": "string"
+          },
+          "example": ["Git", "Docker", "Kubernetes", "Jenkins"]
+        },
+        "databases": {
+          "type": "array",
+          "description": "Database systems",
+          "items": {
+            "type": "string"
+          },
+          "example": ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
+        },
+        "cloud": {
+          "type": "array",
+          "description": "Cloud platforms and services",
+          "items": {
+            "type": "string"
+          },
+          "example": ["AWS", "Google Cloud", "Azure"]
+        },
+        "other": {
+          "type": "array",
+          "description": "Other relevant skills",
+          "items": {
+            "type": "string"
+          },
+          "example": ["Agile/Scrum", "CI/CD", "System Design", "Testing"]
+        }
+      }
+    }
+  }
+}
