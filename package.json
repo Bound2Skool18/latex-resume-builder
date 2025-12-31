@@ -1,0 +1,21 @@
+{
+  "name": "latex-resume-builder",
+  "version": "1.0.0",
+  "description": "This project is a structured resume generator that uses LaTeX for clean, professional document output.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bound2Skool18/latex-resume-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bound2Skool18/latex-resume-builder/issues"
+  },
+  "homepage": "https://github.com/Bound2Skool18/latex-resume-builder#readme"
+}
