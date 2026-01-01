@@ -1,8 +1,14 @@
 const resume = require("./resume")
+const { validateResume } = require("./validate");
 
 resume.header.name = "Jane Doe";
-resume.skills.push("JavaScript");
+resume.header.email = "jane@example.com";
 
-console.log("Resume sections: ", Object.keys(resume));
-console.log("Name:", resume.header.name);
-console.log("Skills:", resume.skills);
+const errors = validateResume(resume);
+
+if (errors.length === 0) {
+    console.log("Validation: PASS");
+} else {
+    console.log("Validation: FAIL");
+    for (const err of errors) console.log("-", err);
+}
